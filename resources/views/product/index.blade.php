@@ -7,7 +7,7 @@
         
 
         <a href="{{ route('producto.create') }}" class="ml-2">
-            <x-primary-button>Agregar Producto</x-primary-button>
+            <x-primary-button>Agregar Producto pedroorororo</x-primary-button>
         </a>
         <section class="my-4 px-2">
             <form action="{{route('productos.index')}}" method="GET" class="flex flex-col gap-3">
@@ -33,9 +33,10 @@
         <section class="flex flex-col md:hidden gap-4 px-2">
             @foreach($products as $product)
             <div class="flex flex-col gap-4 items-center justify-center shadow-md px-3 py-5 rounded-md bg-white dark:bg-gray-700">
+                
                 @if($product->productImages->isNotEmpty())
                 <div class="w-[250px] h-[250px]">
-                    <img src="{{ asset('storage/' . $product->productImages->first()->name) }}"class="object-contain rounded-md w-full h-full">
+                    <img src="{{ asset('storage/products_images/' . $product->productImages->first()->name) }}"class="object-contain rounded-md w-full h-full">
                 </div>
                 @else
                 sin imagnes
@@ -76,7 +77,7 @@
                         <td class="whitespace-nowrap px-2 py-2 ">
                             @if($product->productImages->isNotEmpty())
                             <div class="w-14 h-14 mx-auto">
-                                <img src="{{ asset('storage/' . $product->productImages->first()->name) }}" class="w-full h-full drop-shadow-xl object-contain">
+                                <img src="{{ asset('storage/products_images/' . $product->productImages->first()->name) }}" class="w-full h-full drop-shadow-xl object-contain">
                             </div>
                             @else
                             sin imagnes

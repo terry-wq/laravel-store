@@ -69,8 +69,10 @@ class ProductController extends Controller
         {
             $photos = $request->file('productImages');
             foreach ($photos as $photo) {
-                $name = $newProduct->name . '-' . uniqid() . '.' . $photo->extension();
-                $photo->storeAs($newProduct->id, $name);                
+                $name = uniqid() . '.' . $photo->extension();
+                $imagePath = 'products_images/' . $newProduct->id;
+                
+                $photo->storeAs($imagePath, $name, 'public');                
                 $newProduct->productImages()->save(new ProductImage(['name' => $newProduct->id . '/' . $name]));
             }
         }
@@ -102,12 +104,15 @@ class ProductController extends Controller
             'description',
             'category_id',
         ]));
+
+        
         if ($request->hasFile('productImages')) 
         {
             $photos = $request->file('productImages');
             foreach ($photos as $photo) {
-                $name = $product->name . '-' . uniqid() . '.' . $photo->extension();
-                $photo->storeAs($product->id, $name);                
+                $name = uniqid() . '.' . $photo->extension();
+                $imagePath = 'products_images/' . $product->id;
+                $photo->storeAs($imagePath, $name, 'public');                
                 $product->productImages()->save(new ProductImage(['name' => $product->id . '/' . $name]));
             }
         }

@@ -27,6 +27,7 @@ class ProductRequest extends FormRequest
             'category_id.exists' => 'La categoria no existe',
             'productImages.*.required' => 'Al menos una imágen es requerida',            
             'productImages.*.mimes' => 'Solo se admiten archivos JPG, PNG, JPEG',
+            'productImages.*.max' => 'La imagen no debe pesar más de 5 MB'
             
         ];
     }
@@ -37,14 +38,20 @@ class ProductRequest extends FormRequest
      * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
      */
     public function rules(): array
-    {
-        return [
-            'name' => 'required',
-            'price' => 'required|numeric',
-            'status' => 'required|boolean',
-            'description' => 'required',              
-            'productImages.*' => 'required|file|mimes:jpg,jpeg,png',
-            'category_id' => 'required|numeric|exists:categories,id',
-        ];
-    }
+{
+    return [
+        'name' => 'required',
+        'price' => 'required|numeric',
+        'status' => 'required|boolean',
+        'description' => 'required',
+
+        // ARRAY
+        'productImages' => 'array',
+
+        // CADA ARCHIVO
+        'productImages.*' => 'file|mimes:jpg,jpeg,png|max:5120',
+
+        'category_id' => 'required|numeric|exists:categories,id',
+    ];
+}
 }
