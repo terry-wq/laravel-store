@@ -25,5 +25,10 @@ class AppServiceProvider extends ServiceProvider
             'create' => 'crear',
             'edit' => 'editar',
         ]);
+
+        $view = config('view.compiled');
+        if ($view && ! is_dir($view)) {
+            mkdir($view, 0755, true);
+        }
     }
 }
