@@ -17,7 +17,8 @@
     "env": {
         "APP_NAME": "Vercel Laravel",
         "APP_ENV": "production",
-        "APP_DEBUG": "false",
+        "APP_DEBUG": "true",
+        "APP_KEY": "base64:HEnJaJEX9a5E+58qx4LSDwQH/Z+MasJ0R4/KgfpjzYY=",
         "APP_URL": "https://php-laravel.vercel.app",
         "VERCEL_DEMO_MODE": "false",
         "APP_CONFIG_CACHE": "/tmp/config.php",
