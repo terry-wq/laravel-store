@@ -11,11 +11,29 @@
       }
     }
   ],
-  
   "routes": [
     {
       "handle": "filesystem"
     },
+
+    {
+      "src": "/build/(.*)",
+      "headers": {
+        "cache-control": "public, max-age=31536000, immutable"
+      },
+      "dest": "/public/build/$1"
+    },
+
+    {
+      "src": "/favicon.ico",
+      "dest": "/public/favicon.ico"
+    },
+
+    {
+      "src": "/(.*\\.(js|css|png|jpg|jpeg|gif|svg|ico|webp|woff|woff2|ttf))",
+      "dest": "/public/$1"
+    },
+
     {
       "src": "/(.*)",
       "dest": "api/index.php"
@@ -24,17 +42,17 @@
   "env": {
     "APP_NAME": "Vercel Laravel",
     "APP_ENV": "production",
-    "APP_DEBUG": "true",
+    "APP_DEBUG": "false",
     "APP_URL": "https://laravel-store-kappa.vercel.app",
 
     "APP_CONFIG_CACHE": "/tmp/config.php",
     "APP_EVENTS_CACHE": "/tmp/events.php",
     "APP_PACKAGES_CACHE": "/tmp/packages.php",
     "APP_ROUTES_CACHE": "/tmp/routes.php",
-    "APP_SERVICES_CACHE": "/tmp/services.php",    
+    "APP_SERVICES_CACHE": "/tmp/services.php",
 
-    "VIEW_COMPILED_PATH": "/tmp/views"
+    "VIEW_COMPILED_PATH": "/tmp/views",
 
-    
+    "SESSION_DRIVER": "cookie"
   }
 }
