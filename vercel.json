@@ -11,14 +11,10 @@
       }
     }
   ],
-  "buildCommand": "npm install && npm run build",
+  
   "routes": [
     {
       "handle": "filesystem"
-    },
-    {
-      "src": "/build/(.*)",
-      "dest": "/public/build/$1"
     },
     {
       "src": "/(.*)",
@@ -35,14 +31,10 @@
     "APP_EVENTS_CACHE": "/tmp/events.php",
     "APP_PACKAGES_CACHE": "/tmp/packages.php",
     "APP_ROUTES_CACHE": "/tmp/routes.php",
-    "APP_SERVICES_CACHE": "/tmp/services.php",
-
-    "CACHE_DRIVER": "array",
-    "LOG_CHANNEL": "stderr",
-    "SESSION_DRIVER": "array",
+    "APP_SERVICES_CACHE": "/tmp/services.php",    
 
     "VIEW_COMPILED_PATH": "/tmp/views",
 
-    "ASSET_URL": ""
+    
   }
 }
