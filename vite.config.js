@@ -9,19 +9,7 @@ export default defineConfig({
                 'resources/js/app.js',
             ],
             refresh: true,
+            buildDirectory: '../build'
         }),
     ],
-
-    build: {
-        outDir: 'public/assets',
-        emptyOutDir: true,
-        manifest: false,
-        rollupOptions: {
-            output: {
-                entryFileNames: 'app.js',
-                chunkFileNames: 'chunk.js',
-                assetFileNames: 'app.[ext]'
-            }
-        }
-    }
 })
