@@ -5,7 +5,6 @@
             "src": "/api/index.php",
             "use": "vercel-php@0.8.0"
         }
-       
     ],
     "routes": [
         {
@@ -22,8 +21,6 @@
         "APP_DEBUG": "false",
         "APP_URL": "https://laravel-store-kappa.vercel.app",
 
-        "VERCEL_DEMO_MODE": "false",
-
         "APP_CONFIG_CACHE": "/tmp/config.php",
         "APP_EVENTS_CACHE": "/tmp/events.php",
         "APP_PACKAGES_CACHE": "/tmp/packages.php",
@@ -34,7 +31,6 @@
         "LOG_CHANNEL": "stderr",
         "SESSION_DRIVER": "array",
 
-        "VIEW_COMPILED_PATH": "/tmp/views",
-        "SSR_TEMP_PATH": "/tmp/ssr"
+        "VIEW_COMPILED_PATH": "/tmp/views"
     }
 }
