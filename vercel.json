@@ -1,12 +1,12 @@
 {
-    "version": 2,
-    "buildCommand": "npm install && npm run build",
+    "version": 2,    
     "builds": [
         {
             "src": "/api/index.php",
             "use": "vercel-php@0.8.0"
         }
     ],
+    "buildCommand": "npm install && npm run build",
     "routes": [
         {
             "handle": "filesystem"
