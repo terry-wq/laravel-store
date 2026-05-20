@@ -13,21 +13,10 @@
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
         <!-- Scripts -->
-        @php
-    $manifest = json_decode(
-        file_get_contents(public_path('build/manifest.json')),
-        true
-    );
+        <link rel="stylesheet" href="/resources/css/app.css">
+        <script type="module" src="/resources/js/app.js"></script>
 
-    $js = $manifest['resources/js/app.js']['file'];
-    $css = $manifest['resources/js/app.js']['css'][0] ?? null;
-@endphp
-
-@if($css)
-<link rel="stylesheet" href="{{ asset('build/' . $css) }}">
-@endif
-
-<script type="module" src="{{ asset('build/' . $js) }}"></script>
+        
     </head>
     <body class="font-sans text-gray-900 antialiased">
         <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100 dark:bg-gray-900">
