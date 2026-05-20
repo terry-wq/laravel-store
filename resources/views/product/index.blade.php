@@ -7,7 +7,7 @@
         
 
         <a href="{{ route('producto.create') }}" class="ml-2">
-            <x-primary-button>Agregar Producto pedroorororo</x-primary-button>
+            <x-primary-button>Agregar Producto</x-primary-button>
         </a>
         <section class="my-4 px-2">
             <form action="{{route('productos.index')}}" method="GET" class="flex flex-col gap-3">
