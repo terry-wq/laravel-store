@@ -16,7 +16,6 @@
     {
       "handle": "filesystem"
     },
-
     {
       "src": "/(.*)",
       "dest": "api/index.php"
@@ -24,10 +23,11 @@
   ],
 
   "env": {
-    "APP_NAME": "Vercel Laravel",
     "APP_ENV": "production",
     "APP_DEBUG": "false",
     "APP_URL": "https://laravel-store-kappa.vercel.app",
+
+    "SESSION_DRIVER": "cookie",
 
     "APP_CONFIG_CACHE": "/tmp/config.php",
     "APP_EVENTS_CACHE": "/tmp/events.php",
@@ -35,8 +35,6 @@
     "APP_ROUTES_CACHE": "/tmp/routes.php",
     "APP_SERVICES_CACHE": "/tmp/services.php",
 
-    "VIEW_COMPILED_PATH": "/tmp/views",
-
-    "SESSION_DRIVER": "cookie"
+    "VIEW_COMPILED_PATH": "/tmp/views"
   }
 }
