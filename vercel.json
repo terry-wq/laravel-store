@@ -1,17 +1,10 @@
 {
     "version": 2,
+    "buildCommand": "npm install && npm run build",
     "builds": [
         {
             "src": "/api/index.php",
             "use": "vercel-php@0.8.0"
-        },
-        {
-            "src": "package.json",
-            "use": "@vercel/static-build",
-            "config": {
-                "buildCommand": "npm run build",
-                "distDir": "public"
-            }
         }
     ],
     "routes": [
