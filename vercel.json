@@ -11,27 +11,10 @@
       }
     }
   ],
+
   "routes": [
     {
       "handle": "filesystem"
-    },
-
-    {
-      "src": "/build/(.*)",
-      "headers": {
-        "cache-control": "public, max-age=31536000, immutable"
-      },
-      "dest": "/public/build/$1"
-    },
-
-    {
-      "src": "/favicon.ico",
-      "dest": "/public/favicon.ico"
-    },
-
-    {
-      "src": "/(.*\\.(js|css|png|jpg|jpeg|gif|svg|ico|webp|woff|woff2|ttf))",
-      "dest": "/public/$1"
     },
 
     {
@@ -39,6 +22,7 @@
       "dest": "api/index.php"
     }
   ],
+
   "env": {
     "APP_NAME": "Vercel Laravel",
     "APP_ENV": "production",
