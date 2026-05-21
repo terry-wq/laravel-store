@@ -15,7 +15,7 @@ class ProductImageController extends Controller
     	try {
     		$img = ProductImage::find($id);    	
     		$producto = $img->product_id;    	
-    		Storage::disk('ftp')->delete('products_images' . $img->name);
+    		Storage::disk('ftp')->delete('/products_images/' . $img->name);
     		$img->delete();
     		return back()->with('success', 'Imagen eliminada satisfactoriamente.');
     	}catch(\Throwable $th){
