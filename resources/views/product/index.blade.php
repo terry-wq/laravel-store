@@ -36,7 +36,7 @@
                 
                 @if($product->productImages->isNotEmpty())
                 <div class="w-[250px] h-[250px]">
-                    <img src="{{ asset('storage/products_images/' . $product->productImages->first()->name) }}"class="object-contain rounded-md w-full h-full">
+                    <img src="{{ 'https://store-26.gamer.gd/products_images/' . $product->productImages->first()->name }}" class="object-contain rounded-md w-full h-full">
                 </div>
                 @else
                 sin imagnes
@@ -77,7 +77,7 @@
                         <td class="whitespace-nowrap px-2 py-2 ">
                             @if($product->productImages->isNotEmpty())
                             <div class="w-14 h-14 mx-auto">
-                                <img src="{{ asset('storage/products_images/' . $product->productImages->first()->name) }}" class="w-full h-full drop-shadow-xl object-contain">
+                                <img src="{{ 'https://store-26.gamer.gd/products_images/' . $product->productImages->first()->name }}" class="w-full h-full drop-shadow-xl object-contain">
                             </div>
                             @else
                             sin imagnes

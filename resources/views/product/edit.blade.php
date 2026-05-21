@@ -13,7 +13,7 @@
                 @foreach($producto->productImages as $image)
                 <li class="w-full h-full border-2 rounded-md p-2 flex flex-col items-center">
                     <div class="w-[150px] h-[150px] xl:w-[250px] xl:h-[250px] p-2 flex items-center justify-center">
-                        <img src="{{ asset('storage/products_images/' . $image->name) }}" class="w-full h-full object-contain">                        
+                        <img src="{{ 'https://store-26.gamer.gd/products_images/' . $image->name }}" class="w-full h-full object-contain">                        
                     </div>                  
                     <a href="{{ route('product.image.destroy', $image->id) }}">
                         <x-danger-button>Borrar</x-danger-button>
