@@ -72,7 +72,7 @@ class ProductController extends Controller
                 $name = uniqid() . '.' . $photo->extension();
                 $imagePath = 'products_images/' . $newProduct->id;
                 
-                $photo->storeAs($imagePath, $name, 'public');                
+                $photo->storeAs($imagePath, $name, 'ftp');                
                 $newProduct->productImages()->save(new ProductImage(['name' => $newProduct->id . '/' . $name]));
             }
         }
@@ -112,7 +112,7 @@ class ProductController extends Controller
             foreach ($photos as $photo) {
                 $name = uniqid() . '.' . $photo->extension();
                 $imagePath = 'products_images/' . $product->id;
-                $photo->storeAs($imagePath, $name, 'public');                
+                $photo->storeAs($imagePath, $name, 'ftp');                
                 $product->productImages()->save(new ProductImage(['name' => $product->id . '/' . $name]));
             }
         }
